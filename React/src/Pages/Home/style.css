@@ -1,0 +1,72 @@
+* {
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+form {
+  width: 600px;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9c4d2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: #382b22;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #fff0f0;
+  border: 2px solid #b18597;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #b18597;
+  font-size: 1.2rem;
+}
+input:focus {
+  outline: none;
+  border-color: #b18597;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+input::placeholder {
+  color: #b18597;
+}
+
+.nome {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.email {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.senha {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  transition: background 0.3s ease;
+}
