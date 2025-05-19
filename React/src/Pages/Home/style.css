@@ -1,6 +1,9 @@
 * {
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -10,63 +13,252 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 20px;
 }
 
 form {
-  width: 600px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
-  gap: 40px;
+  gap: 30px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f9c4d2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: rgba(255, 192, 203, 0.15);
+  box-shadow: 0 8px 32px rgba(255, 192, 203, 0.2);
+  backdrop-filter: blur(10px);
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  color: #382b22;
-  text-align: center;
+  color: #2d3436;
+  border: 2px solid rgba(255, 192, 254, 0.804);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2d3436;
   font-weight: 600;
-  text-transform: uppercase;
-  background: #fff0f0;
-  border: 2px solid #b18597;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #636e72;
+  margin-bottom: 20px;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #b18597;
-  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #dfe6e9;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
 }
+
 input:focus {
   outline: none;
-  border-color: #b18597;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-color: #ff9ff3;
+  box-shadow: 0 0 0 3px rgba(255, 159, 243, 0.2);
+  background-color: #ffffff;
 }
+
 input::placeholder {
-  color: #b18597;
+  color: #b2bec3;
 }
 
-.nome {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.email {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
+.nome,
+.email,
 .senha {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 1rem;
+  color: #2d3436;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  color: #ff9ff3;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.toggle-password:hover {
+  color: #f368e0;
+  background-color: rgba(255, 159, 243, 0.1);
+}
+
+.password-container input {
+  padding-right: 45px;
+}
+
+/* Remova ou comente a antiga .learn-more */
+
+/* Novo botão estilizado */
+.cadastrar-btn {
+  width: 100%;
+  max-width: 320px;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff9ff3 0%, #f368e0 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(243, 104, 224, 0.15);
+  transition: background 0.3s, box-shadow 0.2s, transform 0.2s;
+  margin: 24px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cadastrar-btn::after {
+  content: "";
+  position: absolute;
+  left: -75%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+  transform: skewX(-20deg);
+  transition: left 0.4s;
+}
+
+.cadastrar-btn:hover {
+  background: linear-gradient(90deg, #f368e0 0%, #ff9ff3 100%);
+  box-shadow: 0 6px 24px rgba(243, 104, 224, 0.25);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.cadastrar-btn:hover::after {
+  left: 120%;
 }
 
 .app {
   width: 100vw;
   height: 100vh;
   transition: background 0.3s ease;
+  background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.popup-success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff0fa;
+  border: 2px solid #ff9ff3;
+  border-radius: 16px;
+  padding: 32px 40px;
+  box-shadow: 0 8px 32px rgba(255, 159, 243, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: popup-fade-in 0.3s;
+}
+
+.popup-content p {
+  color: #f368e0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.popup-ok {
+  background: #f368e0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popup-ok:hover {
+  background: #ff9ff3;
+}
+
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.login-btn {
+  display: block;
+  margin: 18px auto 0;
+  color: #f368e0;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.login-btn:hover {
+  color: #ff9ff3;
 }
